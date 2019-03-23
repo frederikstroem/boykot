@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Dual-boot Ubuntu 18.04 - Boykot Den Digitale Prøvevagt</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon.png">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <style>
+      * {
+          font-family: "Courier New";
+      }
+      body {
+        color: white;
+        background-color: black;
+      }
+      a {
+        color: #cc6f1a;
+      }
+      p {
+        font-size: 17px;
+      }
+      code {
+        background-color: #3d3d3d;
+        padding: 2px;
+        border-radius: 3px;
+        font-style: italic;
+      }
+      #headerImage {
+        width: 33%;
+        display: block;
+        margin: auto;
+        padding-bottom: 10px;
+      }
+      @media screen and (max-width: 1200px) {
+        #headerImage {
+          width: 50%;
+        }
+      }
+      @media screen and (max-width: 600px) {
+        #headerImage {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <img id="headerImage" src="header.jpg">
+    <h1>Installer Ubuntu 18.04 LTS ved siden af Windows (dual-boot)</h1>
+    <p>Hvis du ligesom mig gerne vil undgå den trælse overvågning og måske syntes det også er lidt træls at risikere at få et -3 for en eksamenen ved at nægte at installere programmet (Den Digitale Prøvevagt), så er der en anden mulighed. Da programmet kun virker til Windows og Mac men ikke Linux, så behøves programmet ikke installeres ved en Linux computer, du skal bare tage prøven "under skærpet tilsyn" (bliver måske lidt svært hvis alle kører Linux/nægter at installere spywaren). Du kan selvfølgelig installere Linux ved siden af Windows så du ikke mister adgangen til dit yndlings-friheds-kattebrowsene-styresystem Windows XP.</p>
+    <h3>Kilde:</h3>
+    <p>
+      <i>
+        "Hvis Den Digitale Prøvevagt ikke kan anvendes<br>
+        I tilfælde af, at programmet ikke kan installeres på elevens computer, skal eleven aflægge prøven under skærpet tilsyn.<br>
+        <br>
+        Den Digitale Prøvevagt udvikles til computere med macOS eller Microsoft Windows styresystemer. Elever, der ved prøven anvender en computer med et andet styresystem, skal aflægge prøven under skærpet tilsyn.<br>
+        <br>
+        Skærpet tilsyn for elever, der ikke omfattes af monitoreringsværktøjet, tilrettelægges af institutionerne på baggrund af vejledning fra Undervisningsministeriet."
+      </i>(06-03-2019)<br><br>
+      <a href="https://uvm.dk/gymnasiale-uddannelser/proever-og-eksamen/netproever/den-digitale-proevevagt/om-den-digitale-proevevagt" target="_blank">Sovs: Undervisningsministeriet</a>
+    </p>
+
+    <h2>[1/5] Hent Linux</h2>
+    <p>Jeg vil anbefale Ubuntu 18.04 LTS hvis du ikke aner hvad for en Linux distribution du vil anvende. <a href="http://releases.ubuntu.com/18.04/ubuntu-18.04.2-desktop-amd64.iso">Ubuntu 18.04 LTS kan hentes ved at klikke her.</a></p>
+
+    <h2>[2/5] Put Ubuntu på en USB pind</h2>
+    <p>Du skal nu have din <code>ubuntu-18.04.2-desktop-amd64.iso</code> over på en USB pind, her skal du bruge en minimum 4GB USB (hvad jeg har læst mig til).</p>
+    <p>Jeg syntes programmet <a href="https://rufus.ie/" target="_blank">Rufus</a> er rigtig godt til dette. Når du har hentet det, så skal du bare sætte sat din USB i computeren, starte Rufus, trække <code>ubuntu-18.04.2-desktop-amd64.iso</code> over i programmet, og trykke kør (husk lige at dobbeltjekke at "Enhed" ser rigtig ud), hvis der kommer nogle adversler så bare tryk videre på dem.</p>
+    <p><a href="https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-windows" target="_blank">For en uddybende guide klik her.</a></p>
+
+    <h2>[3/5] Installer Ubuntu på din computer</h2>
+    <p>Når USBen er klar kan du slukke din computer (måske tage denne guide på din telefon i stedet). Når computeren er slukket skal du nu starte den igen, men når du starter den denne gang skal du trykke F12 mange gange hurtigt til der kommer en menu op hvor du gerne skulle kunne vælge at starte fra USB pinden. Hvis F12 ikke virker kan du måske prøve F2, F4, ja det lidt forskelligt fra computer til computer xD, nogle gange står der også hvilken knap der skal trykkes på når din computer starter op.</p>
+    <p>Når du kommer til installationsdelen i Ubuntu, burde du kunne vælge noget med at installere Ubuntu ved siden af Windows. Hvis du klikke videre på den burde du kunne trække en pind og styre hvor meget plads Ubuntu skal få. 30-50 GB burde være fint til en simpel installation (mindre kan dog også gøre det hvis du nu er plads-trængende). :)</p>
+    <p><a href="https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-desktop" target="_blank">For en uddybende guide klik her.</a></p>
+    <p><a href="https://youtu.be/x1ykDpSzpKU" target="_blank">En YouTube video med en der installer Ubuntu ved siden af Windows 10.</a></p>
+
+    <h2>[4/5] Installer de basale programmer</h2>
+    <p>Du burde nu være kørende og kunne starte op i Ubuntu uden pinden. Der er en package manager der burde være i siden, det sådan en slags App Store man kan installere programmer fra. Du kan også hente programmer på nettet som du vant til.</p>
+    <p>For at installere nogle basale programmer har jeg lavet et lille script der automatisk henter og installerer nogle basale programmer. Og de få ting den ikke lige installerer (fordi jeg ikke lige har fået det automatiseret xD), burde den skrive og give links til i slutningen af scriptet. <a href="basicUbuntuSetup.sh" target="_blank">Hent scriptet ved at klikke her.</a> Tryk ctrl+s for at gemme når den åbner, eller højreklik gem som.</p>
+    <p>Kør scriptet i Ubuntu ved ved at højreklikke i mappen scriptet er i, tryk "Åben terminal her" (eller tilsvarende) og kør scriptet ved at skrive <code>bash basicUbuntuSetup.sh</code> i terminalen. Den spørger nok om dit computer-password, du skal ikke tage dig af der ikke kommer små stjerner **** op når du taster passwordet, den viser dem bare ikke, men passwordet bliver indtastet når du skriver.</p>
+
+    <h2>[5/5] Mere info:</h2>
+    <p>Hvis det her ikke var uddybende nok, så prøv at google ”how to dual-boot windows 10 and ubuntu 18.04” eller noget tilsvarende hvis du fx. kører Mac eller noget andet.</p>
+
+  </body>
+</html>
